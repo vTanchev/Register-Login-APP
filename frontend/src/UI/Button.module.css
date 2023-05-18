@@ -1,0 +1,37 @@
+.button {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: #000;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 219, 222, 1) 0%,
+    rgba(252, 0, 255, 1) 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font: inherit;
+
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.button:hover,
+.button:active {
+  background: linear-gradient(
+    90deg,
+    rgb(2, 191, 194) 0%,
+    rgb(211, 1, 214) 100%
+  );
+}
+
+.button:focus {
+  outline: none;
+}
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:active {
+  background: #ccc;
+  color: #292929;
+  cursor: not-allowed;
+}
