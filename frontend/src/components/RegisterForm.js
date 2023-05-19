@@ -74,21 +74,29 @@ const RegisterForm = () => {
     formIsValid = true;
   }
 
-  const formRegisterHandler = (e) => {
+  const formRegisterHandler = async (e) => {
     e.preventDefault();
 
     if (!formIsValid) {
       return;
     }
 
+    const response = await fetch("http://localhost:8000/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "applicatin/json",
+      },
+      body: JSON.stringify({
+        enteredName,
+        enteredEmail,
+        enteredPassword,
+      }),
+    });
+
+    const data = await response.json();
+    console.log(data);
+
     // reset
-    console.log(
-      "test: ",
-      enteredName,
-      enteredEmail,
-      enteredPassword,
-      enteredConfirmPassword
-    );
     resetNameInput();
     resetEmailInput();
     resetPasswordInput();
